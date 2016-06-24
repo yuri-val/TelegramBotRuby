@@ -1,0 +1,8 @@
+/start - 
+/help - 
+/weather {city=Odessa} -
+/rate - 
+/catImage - 
+/image -
+/jokes {count=5}-
+/stop -
