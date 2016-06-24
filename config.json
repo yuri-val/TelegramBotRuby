@@ -1,0 +1,6 @@
+{
+  //Telegram token
+  "tToken": "169785179:AAEAyasHBCeJMDNohiS434tBt6ZOdygwA-0",
+  //Token for openweathermap.org
+  "wToken": "0b64b4149e555e9bcae74fa03a0d8e02"
+}

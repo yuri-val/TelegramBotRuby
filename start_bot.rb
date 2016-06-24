@@ -3,14 +3,26 @@ require_relative 'bot_func'
 
 botFunc = BotFunc.new
 
-token = '169785179:AAEAyasHBCeJMDNohiS434tBt6ZOdygwA-0'
+config = File.open( 'config.json' ){ |file| file.read }
+hConfig = JSON.parse config
+
+token = hConfig['tToken']
+
 Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
-    case message.text
+
+    params_ = message.text.split(' ')
+    command = params_[0]
+
+    case command
       when '/start'
-        botFunc.sayHello bot, message
+        botFunc.sayHello bot, message, params_
       when '/stop'
-        botFunc.sayGoodBye bot, message
+        botFunc.sayGoodBye bot, message, params_
+      when '/weather'
+        botFunc.sayMeWeather bot, message, params_
+      when '/rate'
+        botFunc.sayMeExchangeRate bot, message, params_
 
     end
   end
